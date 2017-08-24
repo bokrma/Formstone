@@ -16,3 +16,5 @@ npm-debug.log
 # Custom
 /demo/_extra/uploads/
 /demo/_src/pages
+/scss/
+/src/scss/
