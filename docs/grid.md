@@ -12,7 +12,8 @@ A responsive CSS grid.
 
 <!-- DEMO BUTTON -->
 
-## <a name="use"></a> Using Grid
+<a name="use"></a>
+## Using Grid
 
 The grid works by nesting 'cells' within 'rows'. Cells are defined by classes that set widths at specific breakpoints. The breakpoints correspond to general screen sizes. By default, Grid renders 3 columns on 'small', 6 columns on 'medium' and 12 columns on 'large' displays.
 
@@ -22,11 +23,11 @@ A basic example may look something like:
 
 ```markup
 <body class="fs-grid">
-	<div class="fs-row">
-		<div class="fs-cell fs-sm-3 fs-md-2 fs-lg-4">...</div>
-		<div class="fs-cell fs-sm-3 fs-md-2 fs-lg-4">...</div>
-		<div class="fs-cell fs-sm-3 fs-md-2 fs-lg-4">...</div>
-	</div>
+  <div class="fs-row">
+    <div class="fs-cell fs-sm-3 fs-md-2 fs-lg-4">...</div>
+    <div class="fs-cell fs-sm-3 fs-md-2 fs-lg-4">...</div>
+    <div class="fs-cell fs-sm-3 fs-md-2 fs-lg-4">...</div>
+  </div>
 </body>
 ```
 
@@ -54,7 +55,7 @@ Grid relies on border-box and includes a global box-sizing reset:
 *,
 *:before,
 *:after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 ```
 

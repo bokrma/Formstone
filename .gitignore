@@ -13,9 +13,6 @@ npm-debug.log
 # Editor
 .idea
 
-
-/demo/require/
+# Custom
 /demo/_extra/uploads/
-
-
-.sass-cache/
+/demo/_src/pages

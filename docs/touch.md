@@ -16,7 +16,8 @@ A jQuery plugin for multi-touch events.
 
 <!-- DEMO BUTTON -->
 
-## <a name="use"></a> Using Touch
+<a name="use"></a>
+## Using Touch
 
 
 #### Main
@@ -53,13 +54,13 @@ Pan can be used for building touch-friendly draggable interfaces:
 
 ```javascript
 $(".target").touch({
-	pan: true
+  pan: true
 }).on("panstart", function(e) {
-	console.log("Started panning");
+  console.log("Started panning");
 }).on("pan", function(e) {
-	console.log("Panning");
+  console.log("Panning");
 }).on("panend", function(e) {
-	console.log("Stopped panning");
+  console.log("Stopped panning");
 });
 ```
 
@@ -69,9 +70,9 @@ Swipe can be used for building touch-friendly swipable interfaces:
 
 ```javascript
 $(".target").touch({
-	swipe: true
+  swipe: true
 }).on("swipe", function(e) {
-	console.log("Swiped");
+  console.log("Swiped");
 });
 ```
 
@@ -81,20 +82,21 @@ Scale can be used for building touch-friendly scalable interfaces:
 
 ```javascript
 $(".target").touch({
-	scale: true
+  scale: true
 }).on("scalestart", function(e) {
-	console.log("Started scaling");
+  console.log("Started scaling");
 }).on("scale", function(e) {
-	console.log("Scaling");
+  console.log("Scaling");
 }).on("scaleend", function(e) {
-	console.log("Stopped scaling");
+  console.log("Stopped scaling");
 });
 ```
 
 Note: `pan`, `swipe` and `scale` can also be used together to create a rich interface.
 
 
-## <a name="options"></a> Options
+<a name="options"></a>
+## Options
 
 Set instance options by passing a valid object at initialization, or to the public `defaults` method. Custom options for a specific instance can also be set by attaching a `data-touch-options` attribute to the target elment. This attribute should contain the properly formatted JSON object representing the custom options.
 
@@ -106,7 +108,8 @@ Set instance options by passing a valid object at initialization, or to the publ
 | `swipe` | `boolean` | `false` | Swipe events |
 
 <hr>
-## <a name="events"></a> Events
+<a name="events"></a>
+## Events
 
 Events are triggered on the target instance's element, unless otherwise stated.
 
@@ -121,7 +124,8 @@ Events are triggered on the target instance's element, unless otherwise stated.
 | `swipe` | Swipe |
 
 <hr>
-## <a name="methods"></a> Methods
+<a name="methods"></a>
+## Methods
 
 Methods are publicly available to all active instances, unless otherwise stated.
 
@@ -148,7 +152,8 @@ $(".target").touch("destroy");
 ```
 
 <hr>
-## <a name="css"></a> CSS
+<a name="css"></a>
+## CSS
 
 | Class | Type | Description |
 | --- | --- | --- |

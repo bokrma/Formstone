@@ -16,7 +16,8 @@ A jQuery plugin for full-frame image and video backgrounds.
 
 <!-- DEMO BUTTON -->
 
-## <a name="use"></a> Using Background
+<a name="use"></a>
+## Using Background
 
 
 #### Main
@@ -41,13 +42,13 @@ Create a new Background by passing the source image URL at initialization:
 
 ```javascript
 $(".target").background({
-	source: "http://example.com/image.jpg"
+  source: "http://example.com/image.jpg"
 });
 ```
 
 ```markup
 <div class="target">
-	...
+  ...
 </div>
 ```
 
@@ -60,10 +61,10 @@ Create a responsive-friendly Background by defining key/value pairs containing t
 
 ```javascript
 $(".target").background({
-	source: {
-		"0px": "http://example.com/image-small.jpg",
-		"980px": "http://example.com/image-large.jpg"
-	}
+  source: {
+    "0px": "http://example.com/image-small.jpg",
+    "980px": "http://example.com/image-large.jpg"
+  }
 });
 ```
 
@@ -73,12 +74,12 @@ Create a video Background by defining proper browser-specific source video URLs,
 
 ```javascript
 $(".target").background({
-	source: {
-		poster: "http://example.com/poster.jpg",
-		webm: "http://example.com/video.webm",
-		mp4: "http://example.com/video.mp4",
-		ogg: "http://example.com/video.ogv"
-	}
+  source: {
+    poster: "http://example.com/poster.jpg",
+    webm: "http://example.com/video.webm",
+    mp4: "http://example.com/video.mp4",
+    ogg: "http://example.com/video.ogv"
+  }
 });
 ```
 
@@ -90,16 +91,17 @@ Create a YouTube video Background by passing the YouTube embed URL as the source
 
 ```javascript
 $(".target").background({
-	source: {
-		poster: "http://example.com/poster.jpg",
-		video: "//www.youtube.com/embed/VIDEO_ID"
-	}
+  source: {
+    poster: "http://example.com/poster.jpg",
+    video: "//www.youtube.com/embed/VIDEO_ID"
+  }
 });
 ``` -->
 
 
 
-## <a name="options"></a> Options
+<a name="options"></a>
+## Options
 
 Set instance options by passing a valid object at initialization, or to the public `defaults` method. Custom options for a specific instance can also be set by attaching a `data-background-options` attribute to the target elment. This attribute should contain the properly formatted JSON object representing the custom options.
 
@@ -115,7 +117,8 @@ Set instance options by passing a valid object at initialization, or to the publ
 | `source` | `string OR object` | `null` | Source image (string or object) or video (object) |
 
 <hr>
-## <a name="events"></a> Events
+<a name="events"></a>
+## Events
 
 Events are triggered on the target instance's element, unless otherwise stated.
 
@@ -126,7 +129,8 @@ Events are triggered on the target instance's element, unless otherwise stated.
 | `error.background` | Background media error |
 
 <hr>
-## <a name="methods"></a> Methods
+<a name="methods"></a>
+## Methods
 
 Methods are publicly available to all active instances, unless otherwise stated.
 
@@ -191,7 +195,8 @@ $(".target").background("unmute");
 ```
 
 <hr>
-## <a name="css"></a> CSS
+<a name="css"></a>
+## CSS
 
 | Class | Type | Description |
 | --- | --- | --- |

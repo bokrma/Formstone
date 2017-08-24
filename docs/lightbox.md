@@ -16,7 +16,8 @@ A jQuery plugin for simple modals.
 
 <!-- DEMO BUTTON -->
 
-## <a name="use"></a> Using Lightbox
+<a name="use"></a>
+## Using Lightbox
 
 
 #### Main
@@ -47,7 +48,7 @@ $("a").lightbox();
 
 ```markup
 <a href="one.jpg" title="Image Caption">
-	<img src="one_thumb.jpg" alt="">
+  <img src="one_thumb.jpg" alt="">
 </a>
 ```
 
@@ -57,13 +58,13 @@ Link multiple images or videos together with the `data-lightbox-gallery` attribu
 
 ```markup
 <a href="one.jpg" title="Image Caption One" data-lightbox-gallery="photo_gallery">
-	<img src="one_thumb.jpg" alt="">
+  <img src="one_thumb.jpg" alt="">
 </a>
 <a href="two.jpg" title="Image Caption Two" data-lightbox-gallery="photo_gallery">
-	<img src="two_thumb.jpg" alt="">
+  <img src="two_thumb.jpg" alt="">
 </a>
 <a href="three.jpg" title="Image Caption Three" data-lightbox-gallery="photo_gallery">
-	<img src="three_thumb.jpg" alt="">
+  <img src="three_thumb.jpg" alt="">
 </a>
 ```
 
@@ -73,14 +74,15 @@ React to the lightbox by listening for the `open.lightbox` and `close.lightbox` 
 
 ```javascript
 $(window).on("open.lightbox", function() {
-	// ...
+  // ...
 }).on("close.lightbox", function() {
-	// ...
+  // ...
 });
 ```
 
 
-## <a name="options"></a> Options
+<a name="options"></a>
+## Options
 
 Set instance options by passing a valid object at initialization, or to the public `defaults` method. Custom options for a specific instance can also be set by attaching a `data-lightbox-options` attribute to the target elment. This attribute should contain the properly formatted JSON object representing the custom options.
 
@@ -116,7 +118,8 @@ Set instance options by passing a valid object at initialization, or to the publ
 | `viewer` | `boolean` | `false` | Flag to force 'Viewer' rendering, if available |
 
 <hr>
-## <a name="events"></a> Events
+<a name="events"></a>
+## Events
 
 Events are triggered on the target instance's element, unless otherwise stated.
 
@@ -127,7 +130,8 @@ Events are triggered on the target instance's element, unless otherwise stated.
 | `error.lightbox` | Lightbox error; Triggered on window |
 
 <hr>
-## <a name="methods"></a> Methods
+<a name="methods"></a>
+## Methods
 
 Methods are publicly available to all active instances, unless otherwise stated.
 
@@ -177,7 +181,8 @@ $.lightbox("resize");
 | `width` | `int | false` | &nbsp; | Target width or false to auto size |
 
 <hr>
-## <a name="css"></a> CSS
+<a name="css"></a>
+## CSS
 
 | Class | Type | Description |
 | --- | --- | --- |

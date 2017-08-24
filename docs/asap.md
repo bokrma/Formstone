@@ -15,7 +15,8 @@ A jQuery plugin for asynchronous page loads.
 
 <!-- DEMO BUTTON -->
 
-## <a name="use"></a> Using ASAP
+<a name="use"></a>
+## Using ASAP
 
 
 #### Main
@@ -45,18 +46,18 @@ ob_start();
 $page_title = "Page Title";
 
 if ($_GET["fs-asap"]) {
-	define("IS_ASAP", true);
+  define("IS_ASAP", true);
 }
 
 if (!IS_ASAP) {
-	// Draw Header
+  // Draw Header
 ?>
 <html>
-	<head>
-		...
-	</head>
-	<body>
-		<div id="page_content">
+  <head>
+    ...
+  </head>
+  <body>
+    <div id="page_content">
 <?
 }
 
@@ -66,10 +67,10 @@ if (!IS_ASAP) {
 <?
 
 if (!IS_ASAP) {
-	// Draw footer
+  // Draw footer
 ?>
-		</div>
-	</body>
+    </div>
+  </body>
 </html>
 <?
 }
@@ -77,13 +78,13 @@ if (!IS_ASAP) {
 $page_content = ob_get_clean();
 
 if (IS_ASAP) {
-	echo json_encode(array(
-		"title" => $page_title,
-		"#page_content" => $page_content,
-	));
-	die();
+  echo json_encode(array(
+    "title" => $page_title,
+    "#page_content" => $page_content,
+  ));
+  die();
 } else {
-	echo $content;
+  echo $content;
 }
 
 ?>
@@ -95,22 +96,23 @@ Only updating parts of a page also means static resources, like CSS and JavaScri
 
 ```javascript
 $(window).on("requested.asap", function(e) {
-	// Before request is made.
+  // Before request is made.
 }).on("progress.asap", function (e) {
-	// As request is loaded. 
+  // As request is loaded. 
 }).on("loaded.asap", function (e) {
-	// After request is loaded. Tear down any existing plugins.
+  // After request is loaded. Tear down any existing plugins.
 }).on("loaded.asap", function (e) {
-	// After state is rendered. Initialize any new plugins.
+  // After state is rendered. Initialize any new plugins.
 }).on("failed.asap", function (e) {
-	// After load error.
+  // After load error.
 });
 ```
 
 
 
 
-## <a name="options"></a> Options
+<a name="options"></a>
+## Options
 
 Set instance options by passing a valid object at initialization, or to the public `defaults` method.
 
@@ -124,7 +126,8 @@ Set instance options by passing a valid object at initialization, or to the publ
 | `transitionOut` | `function` | `$.noop` | Transition timing callback; should return user defined $.Deferred object, which must eventually resolve |
 
 <hr>
-## <a name="events"></a> Events
+<a name="events"></a>
+## Events
 
 Events are triggered on the `window`, unless otherwise stated.
 
@@ -137,7 +140,8 @@ Events are triggered on the `window`, unless otherwise stated.
 | `failed.asap` | After load error; triggered on window |
 
 <hr>
-## <a name="methods"></a> Methods
+<a name="methods"></a>
+## Methods
 
 Methods are publicly available, unless otherwise stated.
 

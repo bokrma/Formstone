@@ -15,7 +15,8 @@ A jQuery plugin for custom scrollbars.
 
 <!-- DEMO BUTTON -->
 
-## <a name="use"></a> Using Scrollbar
+<a name="use"></a>
+## Using Scrollbar
 
 
 #### Main
@@ -44,7 +45,7 @@ $(".target").scrollbar();
 
 ```markup
 <div class="target">
-	<p>...</p>
+  <p>...</p>
 </div>
 ```
 
@@ -52,12 +53,13 @@ $(".target").scrollbar();
 
 ```javascript
 $(".target").scrollbar({
-	horizontal: true
+  horizontal: true
 });
 ```
 
 
-## <a name="options"></a> Options
+<a name="options"></a>
+## Options
 
 Set instance options by passing a valid object at initialization, or to the public `defaults` method. Custom options for a specific instance can also be set by attaching a `data-scrollbar-options` attribute to the target elment. This attribute should contain the properly formatted JSON object representing the custom options.
 
@@ -72,7 +74,8 @@ Set instance options by passing a valid object at initialization, or to the publ
 | `trackMargin` | `int` | `0` | &nbsp; |
 
 <hr>
-## <a name="methods"></a> Methods
+<a name="methods"></a>
+## Methods
 
 Methods are publicly available to all active instances, unless otherwise stated.
 
@@ -122,7 +125,8 @@ $(".target").scrollbar("scroll", position, duration);
 | `duration` | `int` | `null` | Optional scroll duration |
 
 <hr>
-## <a name="css"></a> CSS
+<a name="css"></a>
+## CSS
 
 | Class | Type | Description |
 | --- | --- | --- |

@@ -15,7 +15,8 @@ A jQuery plugin for replacing checkboxes.
 
 <!-- DEMO BUTTON -->
 
-## <a name="use"></a> Using Checkbox
+<a name="use"></a>
+## Using Checkbox
 
 
 #### Main
@@ -43,12 +44,12 @@ $("input[type=checkbox], input[type=radio]").checkbox();
 
 ```markup
 <fieldset>
-	<label for="check_1">Checkbox</label>
-	<input type="checkbox" name="check_1" id="check_1" value="on">
+  <label for="check_1">Checkbox</label>
+  <input type="checkbox" name="check_1" id="check_1" value="on">
 </fieldset>
 <fieldset>
-	<label for="radio_1">Radio</label>
-	<input type="radio" name="radio_1" id="radio_1" value="on">
+  <label for="radio_1">Radio</label>
+  <input type="radio" name="radio_1" id="radio_1" value="on">
 </fieldset>
 ```
 
@@ -58,12 +59,13 @@ Checkbox can also render a 'toggle' style checkbox.
 
 ```javascript
 $("input[type=checkbox]").checkbox({
-	toggle: true
+  toggle: true
 });
 ```
 
 
-## <a name="options"></a> Options
+<a name="options"></a>
+## Options
 
 Set instance options by passing a valid object at initialization, or to the public `defaults` method. Custom options for a specific instance can also be set by attaching a `data-checkbox-options` attribute to the target elment. This attribute should contain the properly formatted JSON object representing the custom options.
 
@@ -76,7 +78,8 @@ Set instance options by passing a valid object at initialization, or to the publ
 | `theme` | `string` | `"fs-light"` | Theme class name |
 
 <hr>
-## <a name="methods"></a> Methods
+<a name="methods"></a>
+## Methods
 
 Methods are publicly available to all active instances, unless otherwise stated.
 
@@ -105,7 +108,8 @@ $(".target").checkbox("update");
 ```
 
 <hr>
-## <a name="css"></a> CSS
+<a name="css"></a>
+## CSS
 
 | Class | Type | Description |
 | --- | --- | --- |

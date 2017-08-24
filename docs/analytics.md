@@ -13,7 +13,8 @@ A jQuery plugin for Google Universal Analytics Events.
 
 <!-- DEMO BUTTON -->
 
-## <a name="use"></a> Using Analytics
+<a name="use"></a>
+## Using Analytics
 
 
 #### Main
@@ -45,10 +46,10 @@ Fire custom events by passing the event field values directly to Analytics:
 
 ```javascript
 $.analytics("event", {
-	eventCategory: "Category", 
-	eventAction: "Action" 
-	eventLabel: "Label",
-	eventValue: 100
+  eventCategory: "Category",
+  eventAction: "Action"
+  eventLabel: "Label",
+  eventValue: 100
 });
 ```
 
@@ -60,8 +61,8 @@ Track scroll depth by enabling the `scrollDepth` option at initialization. Chang
 
 ```javascript
 $.analytics({
-	scrollDepth: true,
-	scrollStops: 10
+  scrollDepth: true,
+  scrollStops: 10
 });
 ```
 
@@ -77,10 +78,12 @@ $.analytics("pageview");
 
 Analytics will push to all available trackers, even when loaded using Google Tag Manager.
 
-Note: The [Google Analytics Debugger](https://chrome.google.com/webstore/detail/google-analytics-debugger/jnkmfdileelhofjcijamephohjechhna) extension helps to ensure events are being properly pushed. 
+Note: The [Google Analytics Debugger](https://chrome.google.com/webstore/detail/google-analytics-debugger/jnkmfdileelhofjcijamephohjechhna) extension helps to ensure events are being properly pushed.
 
 
-## <a name="options"></a> Options
+
+<a name="options"></a>
+## Options
 
 Set instance options by passing a valid object at initialization, or to the public `defaults` method.
 
