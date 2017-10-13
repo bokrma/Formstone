@@ -229,18 +229,20 @@ module.exports = function() {
               doc.css.push(klass);
             }
           } else if (content.indexOf("@grid") > -1) {
-            var grid = parseCSS(content);
-            doc.name = grid.name;
-            doc.namespace = grid.namespace;
-            doc.type = "grid";
-            doc.description = grid.description;
+            if (content.indexOf("@ignore") < 0) {
+              var grid = parseCSS(content);
+              doc.name = grid.name;
+              doc.namespace = grid.namespace;
+              doc.type = "grid";
+              doc.description = grid.description;
+            }
           }
         }
       }
     }
 
     if (doc.name) {
-      var namespace = doc.name.toLowerCase();
+      var namespace = doc.name.toLowerCase().replace(/ /g, "");
 
       if (jsFile) {
         if (namespace !== "formstone" && namespace !== "core" && namespace !== "grid") {
@@ -334,7 +336,7 @@ module.exports = function() {
     md += '\n<!-- DEMO BUTTON -->\n';
 
     md += '\n';
-    md += '<a name="use"></a>\n';
+    md += '<a name="use"></a>\n\n';
     md += heading + '# Using ' + doc.name;
     md += '\n\n';
 
@@ -373,7 +375,7 @@ module.exports = function() {
 
     if (doc.options && doc.options.length) {
       md += '\n';
-      md += '<a name="options"></a>\n';
+      md += '<a name="options"></a>\n\n';
       md += heading + '# Options';
       md += '\n\n';
       if (doc.type === "widget") {
@@ -400,7 +402,7 @@ module.exports = function() {
 
     if (doc.events && doc.events.length) {
       md += '<hr>\n';
-      md += '<a name="events"></a>\n';
+      md += '<a name="events"></a>\n\n';
       md += heading + '# Events';
       md += '\n\n';
       if (doc.type === "widget") {
@@ -426,7 +428,7 @@ module.exports = function() {
 
     if (doc.methods && doc.methods.length) {
       md += '<hr>\n';
-      md += '<a name="methods"></a>\n';
+      md += '<a name="methods"></a>\n\n';
       md += heading + '# Methods';
       md += '\n\n';
       if (doc.type === "widget") {
@@ -476,7 +478,7 @@ module.exports = function() {
 
     if (doc.css && doc.css.length) {
       md += '<hr>\n';
-      md += '<a name="css"></a>\n';
+      md += '<a name="css"></a>\n\n';
       md += heading + '# CSS';
       md += '\n\n';
       md += '| Class | Type | Description |';
@@ -589,7 +591,7 @@ module.exports = function() {
     for (var i in allDocs.grid) {
       var d = allDocs.grid[i];
 
-      if (d.demo.toLowerCase().indexOf("no demo") < 0) {
+      if (d.demo && d.demo.toLowerCase().indexOf("no demo") < 0) {
         demosmd += '* [' + d.name + '](components/' + d.name.toLowerCase().replace(/ /g, "") + '.html)';
         demosmd += '\n';
       }
@@ -713,5 +715,4 @@ module.exports = function() {
            'Available under the GNU GPL v3 for all open source applications. <br>A commercial license is required for all commercial applications.';
 
   fs.write(destination, markdown);
-  // grunt.log.writeln('File "' + destination + '" created.');
 }

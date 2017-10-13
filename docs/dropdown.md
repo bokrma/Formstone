@@ -16,6 +16,7 @@ A jQuery plugin for custom select elements.
 <!-- DEMO BUTTON -->
 
 <a name="use"></a>
+
 ## Using Dropdown
 
 
@@ -72,6 +73,7 @@ Note: If the select is too close to the bottom edge of the `body` tag, the dropd
 
 
 <a name="options"></a>
+
 ## Options
 
 Set instance options by passing a valid object at initialization, or to the public `defaults` method. Custom options for a specific instance can also be set by attaching a `data-dropdown-options` attribute to the target elment. This attribute should contain the properly formatted JSON object representing the custom options.
@@ -84,12 +86,13 @@ Set instance options by passing a valid object at initialization, or to the publ
 | `label` | `string` | `''` | Label displayed before selection |
 | `external` | `boolean` | `false` | Open options as links in new window |
 | `links` | `boolean` | `false` | Open options as links in same window |
-| `mobile` | `boolean` | `false` | Use native browser UI on mobile |
+| `native` | `boolean` | `false` | Use native browser options |
 | `theme` | `string` | `"fs-light"` | Theme class name |
 | `trim` | `int` | `0` | &nbsp; |
 
 <hr>
 <a name="methods"></a>
+
 ## Methods
 
 Methods are publicly available to all active instances, unless otherwise stated.
@@ -170,6 +173,7 @@ $(".target").dropdown("update");
 
 <hr>
 <a name="css"></a>
+
 ## CSS
 
 | Class | Type | Description |
@@ -182,7 +186,7 @@ $(".target").dropdown("update");
 | `.fs-dropdown.fs-dropdown-disabled` | `modifer` | Indicates disabled state |
 | `.fs-dropdown.fs-dropdown-open` | `modifer` | Indicates open state |
 | `.fs-dropdown.fs-dropdown-focus` | `modifer` | Indicates focus state |
-| `.fs-dropdown.fs-dropdown-mobile` | `modifer` | Indicates mobile option |
+| `.fs-dropdown.fs-dropdown-native` | `modifer` | Indicates native options |
 | `.fs-dropdown-selected` | `element` | Handle item |
 | `.fs-dropdown-options` | `element` | Options container |
 | `.fs-dropdown-group` | `element` | Option group label |

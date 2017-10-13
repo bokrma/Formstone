@@ -7,18 +7,18 @@
 
 // Config
 
-@fs-dropdown-max-height:              260px;
+@fs-dropdown-max-height: 260px;
 
-@fs-dropdown-background-color:            #fff;
-@fs-dropdown-color:                  #000;
+@fs-dropdown-background-color: #fff;
+@fs-dropdown-color: #000;
 
 // Disabled
 
-@fs-dropdown-disabled-opacity:            0.5;
+@fs-dropdown-disabled-opacity: 0.5;
 
 // Item - Selected
 
-@fs-dropdown-item-selected-background-color:    #ddd;
+@fs-dropdown-item-selected-background-color: #ddd;
 
 /**
  * @class
@@ -72,9 +72,9 @@
  */
 /**
  * @class
- * @name .fs-dropdown.fs-dropdown-mobile
+ * @name .fs-dropdown.fs-dropdown-native
  * @type modifer
- * @description Indicates mobile option
+ * @description Indicates native options
  */
 
 .fs-dropdown {
@@ -115,13 +115,15 @@
     }
   }
 
-  // Mobile
+  // Mative
 
-  &-mobile &-element {
+  &-mobile &-element, // TODO: Deprecated
+  &-native &-element {
     z-index: 7;
   }
 
-  &-mobile&-multiple &-element {
+  &-mobile&-multiple &-element, // TODO: Deprecated
+  &-native&-multiple &-element {
     z-index: -1;
   }
 

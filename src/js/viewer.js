@@ -294,7 +294,7 @@
                 property: "opacity"
               },
               function() {
-                // console.log("loaded!");
+                // Loaded
               });
 
             data.$el.removeClass(RawClasses.loading);
@@ -1192,7 +1192,6 @@
         },
 
         methods: {
-          _setup: setup,
           _construct: construct,
           _destruct: destruct,
           _resize: resize,
@@ -1218,7 +1217,10 @@
       ScrollTop = 0,
       $Instances = [],
       ViewportSetup = false;
-    // $LazyInstances  = [];
+
+    // Setup
+
+    Formstone.Ready(setup);
 
   })
 

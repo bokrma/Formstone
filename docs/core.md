@@ -14,6 +14,7 @@ Formstone Library core. Required for all plugins.
 <!-- DEMO BUTTON -->
 
 <a name="use"></a>
+
 ## Using Core
 
 ### Formstone Object
@@ -109,7 +110,7 @@ Widget plugins are implicitly tied to an element to enhance or change the interf
 
   "use strict";
 
-  function setUp() {
+  function setup() {
     // this = document
   }
 
@@ -139,7 +140,6 @@ Widget plugins are implicitly tied to an element to enhance or change the interf
         "visible"
       ],
       methods: {
-        _setup         : setup,
         _construct     : construct,
         _postConstruct : construct,
         _destruct      : destruct,
@@ -159,16 +159,17 @@ Widget plugins are implicitly tied to an element to enhance or change the interf
     Events       = Plugin.events,
     Functions    = Plugin.functions;
 
+  Formstone.Ready(setup);
+
 })
 
 );
 ```
 
-As in the example above, Widgets can override three internal methods by pointing a key to the corresponding local function:
+As in the example above, Widgets can override the following internal methods by pointing a key to the corresponding local function:
 
 | Method | Description |
 | --- | --- |
-| `_setup` | Run once when document is ready, scoped to document |
 | `_construct` | Run at initialization of each instance, scoped to specific instance |
 | `_postConstruct` | Run after initialization of current instance set, scoped to specific instance |
 | `_destruct` | Run at destruction of each instance, scoped to specific instance |
@@ -391,20 +392,10 @@ One benefit of Formstone is the module nature of the components, allowing develo
 Formstone.NoConflict();
 ```
 
-### Modernizr Support
-
-Formstone styles depend on a few basic [Modernizr](https://modernizr.com/) classes:
-
-| Test |
-| --- |
-| csstransforms |
-| csstransforms3d |
-| opacity |
-| touchevents |
-
 
 <hr>
 <a name="methods"></a>
+
 ## Methods
 
 ### NoConflict

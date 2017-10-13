@@ -34,7 +34,7 @@ var comment = '/*! <%= pkg.name %> v<%= pkg.version %> [<%= filename %>] <%= dat
 // Clean
 
 gulp.task('clean', function () {
-  return gulp.src('dist/*', { read: false })
+  return gulp.src(['dist/*', 'docs/*'], { read: false })
     .pipe(clean());
 });
 
@@ -101,8 +101,8 @@ gulp.task('demoScripts', function() {
     .pipe(include({
       includePaths: [
         __dirname,
-        __dirname + "/node_modules",
-        __dirname + "/demo/js/src"
+        __dirname + "/demo/js/src",
+        __dirname + "/node_modules"
       ]
     }))
     .pipe(replaceInclude({
@@ -202,12 +202,12 @@ gulp.task('beautifyScripts', function() {
 });
 
 gulp.task('beautifyStyles', function() {
-  // return gulp.src('./src/css/**/*.less')
+  // return gulp.src('./src/less/**/*.less')
   //   .pipe(cssbeautify({
   //     indent: '  ',
   //     autosemicolon: true
   //   }))
-  //   .pipe(gulp.dest('./src/css/'));
+  //   .pipe(gulp.dest('./src/less/'));
 });
 
 // Less to Sass
@@ -247,6 +247,9 @@ gulp.task('dev', ['default'], function() {
   gulp.watch('./src/less/**/*.less', ['demo']);
   gulp.watch('./src/js/**/*.js', ['demo']);
   gulp.watch('./src/docs/**/*', ['buildDocs', 'zetzer']);
+
+  gulp.watch('./demo/css/src/**/*', ['demoStyles']);
+  gulp.watch('./demo/js/src/**/*', ['demoScripts']);
 });
 
 gulp.task('beautify', ['beautifyStyles', 'beautifyScripts']);

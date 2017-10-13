@@ -17,6 +17,7 @@ A jQuery plugin for simple drag and drop uploads.
 <!-- DEMO BUTTON -->
 
 <a name="use"></a>
+
 ## Using Upload
 
 
@@ -49,7 +50,7 @@ $(".target").upload({
 <div class="target"></div>
 ```
 
-Note: IE9 does not support the <a href="http://caniuse.com/#feat=fileapi" target="_blank">File API</a>. The developer will need to provide a proper fallback. Support can be checked in the `Formstone.support` object:
+Note: Older browsers do not support the <a href="http://caniuse.com/#feat=fileapi" target="_blank">File API</a>. Developers will need to provide a proper fallback. Support can be checked in the `Formstone.support` object:
 
 ```js
 if (Formstone.support.file) {
@@ -71,10 +72,10 @@ function onBeforeSend(formData, file) {
   if (file.name.indexOf(".jpg") < 0) {
     return false;
   }
-  
+
   // Modify and return form data
   formdata.append("input_name", "input_value");
-  
+
   return formData;
 }
 ```
@@ -96,7 +97,9 @@ $(".target").upload("abort");
 Upload does not store or manipulate uploaded files on the server, it simply facilitates the asynchronous upload process from the front end.
 
 
+
 <a name="options"></a>
+
 ## Options
 
 Set instance options by passing a valid object at initialization, or to the public `defaults` method. Custom options for a specific instance can also be set by attaching a `data-upload-options` attribute to the target elment. This attribute should contain the properly formatted JSON object representing the custom options.
@@ -123,6 +126,7 @@ Set instance options by passing a valid object at initialization, or to the publ
 
 <hr>
 <a name="events"></a>
+
 ## Events
 
 Events are triggered on the target instance's element, unless otherwise stated.
@@ -145,6 +149,7 @@ Events are triggered on the target instance's element, unless otherwise stated.
 
 <hr>
 <a name="methods"></a>
+
 ## Methods
 
 Methods are publicly available to all active instances, unless otherwise stated.
@@ -205,6 +210,7 @@ $(".target").upload("start");
 
 <hr>
 <a name="css"></a>
+
 ## CSS
 
 | Class | Type | Description |

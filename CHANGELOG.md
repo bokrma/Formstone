@@ -2,16 +2,25 @@
 
 <!-- -->
 
+### 1.4.1
+
+* Fixed issue with nested rows in Grid
+* Fixed issue with initialization in Checkpoint
+
 ### 1.4.0
 
-* Updated minimum jQuery version and
-* Movied to Gulp build process
+* Updated minimum jQuery version
+* Updated to Gulp build process
+* Added flexbox based grid as default (legacy float based grid still available)
 * Added Checkpoint plugin for CSS animations scroll
 * Added Sticky plugin for sticky elements on scroll
 * Added Formstone.Ready handler to Core
 * Added additional AJAX parameters in Upload events
 * Fixed issue with moving input elements in Checkbox
-* Removed IE 8 & 9 support
+* Fixed issue with load order and `setup` calls
+* Renamed `mobile` option to `native` in Dropdown for clarity
+* Removed Modernizr requirement
+* Removed legacy browser support
 
 ### 1.3.3
 

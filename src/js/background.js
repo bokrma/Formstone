@@ -239,7 +239,7 @@
 
         for (var i in data.sources) {
           if (data.sources.hasOwnProperty(i)) {
-            if (Formstone.support.nativeMatchMedia) {
+            if (Formstone.support.matchMedia) {
               if (data.sources[i].mq.matches) {
                 source = data.sources[i].url;
               }
@@ -499,11 +499,9 @@
                   data.player.playVideo();
                 }
 
-                /* if (!isSafari) { */
                 // Fix for Safari's overly secure security settings...
                 data.$el.find(Classes.embed)
                   .addClass(RawClasses.ready);
-                /* } */
               },
               onPlaybackQualityChange: function(e) {
                 /* console.log("onPlaybackQualityChange", e); */
@@ -929,7 +927,6 @@
         },
 
         methods: {
-          _setup: setup,
           _construct: construct,
           _destruct: destruct,
           _resize: resize,
@@ -960,6 +957,10 @@
       BGSupport = ("backgroundSize" in Formstone.document.documentElement.style),
       YouTubeReady = false,
       YouTubeQueue = [];
+
+    // Setup
+
+    Formstone.Ready(setup);
 
     /**
      * @method private global

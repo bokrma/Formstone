@@ -65,17 +65,36 @@
      */
 
     function construct(data) {
+      data.initialized = false;
+
+      var $container = $(data.$el.data("checkpoint-container")),
+          intersect  = data.$el.data("checkpoint-intersect"),
+          offset     = data.$el.data("checkpoint-offset");
+
+      if (intersect) {
+        data.intersect = intersect;
+      }
+      if (offset) {
+        data.offset = offset;
+      }
+
       var intersectParts = data.intersect.split("-");
 
       data.windowIntersect = intersectParts[0];
       data.elIntersect = intersectParts[1];
       data.visible = false;
 
-      var $container = $(data.$el.data("checkpoint-container"));
-
       data.$target = ($container.length) ? $container : data.$el;
 
+      var $images = data.$target.find("img");
+
+      if ($images.length) {
+        $images.on(Events.load, data, resizeInstance);
+      }
+
       data.$el.addClass(RawClasses.base);
+
+      data.initialized = true;
     }
 
     /**
@@ -112,6 +131,13 @@
     }
 
     /**
+     * @method
+     * @name resize
+     * @description Updates instance.
+     * @example $(".target").checkpoint("resize");
+     */
+
+    /**
      * @method private
      * @name resizeInstance
      * @description Handle window resize event
@@ -119,11 +145,16 @@
      */
 
     function resizeInstance(data) {
+      if (!data.initialized) {
+        return;
+      }
+
       switch (data.windowIntersect) {
         case "top":
           data.windowCheck = 0 - data.offset;
           break;
         case "middle":
+        case "center":
           data.windowCheck = (WindowHeight / 2) - data.offset;
           break;
         case "bottom":
@@ -133,15 +164,17 @@
           break;
       }
 
+      data.elOffset = data.$target.offset();
+
       switch (data.elIntersect) {
         case "top":
-          data.elCheck = data.$target[0].offsetTop;
+          data.elCheck = data.elOffset.top;
           break;
         case "middle":
-          data.elCheck = data.$target[0].offsetTop + (data.$target.outerHeight() / 2);
+          data.elCheck = data.elOffset.top + (data.$target.outerHeight() / 2);
           break;
         case "bottom":
-          data.elCheck = data.$target[0].offsetTop + data.$target.outerHeight();
+          data.elCheck = data.elOffset.top + data.$target.outerHeight();
           break;
         default:
           break;
@@ -158,6 +191,10 @@
      */
 
     function checkInstance(data) {
+      if (!data.initialized) {
+        return;
+      }
+
       var check = (ScrollTop + data.windowCheck);
 
       if (check >= data.elCheck) {
@@ -225,7 +262,9 @@
           _postConstruct: postConstruct,
           _destruct: destruct,
           _resize: resize,
-          _raf: raf
+          _raf: raf,
+
+          resize: resizeInstance
         }
       }),
 

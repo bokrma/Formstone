@@ -605,7 +605,6 @@
 
           // Private Methods
 
-          _setup: $.noop, // Document ready
           _construct: $.noop, // Constructor
           _postConstruct: $.noop, // Post Constructor
           _destruct: $.noop, // Destructor
@@ -700,23 +699,8 @@
         return settings;
       })(namespace, settings);
 
-      // Setup, catches lazy-loaded components, ensures order
-
-      $Ready.then(function() {
-        setupPlugin(namespace);
-      });
-
       return Formstone.Plugins[namespace];
     };
-
-    // Setup Plugins
-
-    function setupPlugin(namespace) {
-      if (!Formstone.Plugins[namespace].initialized) {
-        Formstone.Plugins[namespace].methods._setup.call(document);
-        Formstone.Plugins[namespace].initialized = true;
-      }
-    }
 
     // Namespace Properties
 
@@ -864,15 +848,14 @@
     Formstone.Ready(function() {
       Formstone.$body = $("body");
 
+      $("html").addClass( (Formstone.support.touch) ? "touchevents" : "no-touchevents" );
+
       // Viewport
       $ViewportMeta = $('meta[name="viewport"]');
       ViewportMetaOriginal = ($ViewportMeta.length) ? $ViewportMeta.attr("content") : false;
       ViewportMetaLocked = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0';
 
       $Ready.resolve();
-
-      // ie8 fallback support
-      Formstone.support.nativeMatchMedia = Formstone.support.matchMedia && !$("html").hasClass("no-matchmedia");
     });
 
     // Custom Events

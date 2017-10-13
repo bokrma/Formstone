@@ -7,22 +7,22 @@
 
 // Config
 
-@fs-checkbox-transition-duration:      0.15s;
-@fs-checkbox-transition-timing:        ease;
+@fs-checkbox-transition-duration: 0.15s;
+@fs-checkbox-transition-timing: ease;
 
-@fs-checkbox-marker-height-width:      20px;
+@fs-checkbox-marker-height-width: 20px;
 
-@fs-checkbox-flag-background:        #666;
+@fs-checkbox-flag-background: #666;
 
 // Disabled
 
-@fs-checkbox-disabled-opacity:        0.5;
+@fs-checkbox-disabled-opacity: 0.5;
 
 // Toggle
-@fs-checkbox-toggle-marker-background:    #666;
+@fs-checkbox-toggle-marker-background: #666;
 
-@fs-checkbox-toggle-marker-height:      40px;
-@fs-checkbox-toggle-marker-width:      100px;
+@fs-checkbox-toggle-marker-height: 40px;
+@fs-checkbox-toggle-marker-width: 100px;
 
 /**
  * @class
@@ -75,17 +75,8 @@
 
 .fs-checkbox {
 
-  /**
-   * @class
-   * @name .fs-checkbox-enabled
-   * @type modifier
-   * @description Indicates enabled state
-   */
-
-  &&-enabled {
-    cursor: pointer;
-    overflow: hidden;
-  }
+  display: inline-block;
+  vertical-align: middle;
 
   &,
   &:after,
@@ -134,7 +125,7 @@
 
   &-label {
     cursor: pointer;
-    display: block;;
+    display: inline-block;
     line-height: @fs-checkbox-marker-height-width;
     overflow: hidden;
     user-select: none;
@@ -155,8 +146,8 @@
 
     border: 1px solid;
     cursor: pointer;
-    display: block;
-    float: left;
+    display: inline-block;
+    // float: left;
   }
 
   /**
@@ -193,24 +184,6 @@
     transform:
       rotate(45deg)
       scale(1);
-  }
-
-  // Checked
-
-  // No transforms
-
-  .no-csstransforms &-flag:before {
-    width: 100%;
-    height: 100%;
-
-    content: "\2713";
-    display: none;
-    line-height: 1;
-    text-align: center;
-  }
-
-  .no-csstransforms &-checked &-flag:before {
-    display: block;
   }
 
   // Radio

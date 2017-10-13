@@ -5,8 +5,8 @@
  */
 
 @import "imports/utils.less";
-@import "imports/grid-config.less";
-@import "imports/grid-mixins.less";
+@import "imports/grid-flex-config.less";
+@import "imports/grid-flex-mixins.less";
 
 // !Reset Box-sizing
 
@@ -49,15 +49,15 @@
         &:extend(.fs_grid_cell_contained);
       }
 
-      // !Right Cells
-      [class*="@{fs-grid-class-cell}"][class*="@{fs-grid-class-right}"] {
-        &:extend(.fs_grid_cell_right);
-      }
-
-      // !Centered Cells
-      [class*="@{fs-grid-class-cell}"][class*="@{fs-grid-class-centered}"] {
-        &:extend(.fs_grid_cell_centered);
-      }
+      // // !First Cells
+      // [class*="@{fs-grid-class-cell}"][class*="@{fs-grid-class-first}"] {
+      //   &:extend(.fs_grid_cell_first);
+      // }
+      //
+      // // !Last Cells
+      // [class*="@{fs-grid-class-cell}"][class*="@{fs-grid-class-last}"] {
+      //   &:extend(.fs_grid_cell_last);
+      // }
 
       // !All Sizes
       .fs_grid(@fs-grid-class-all, 0);
@@ -136,22 +136,15 @@
   &:extend(.fs_grid_cell_contained);
 }
 
-.fs_cell_right() {
-  &:extend(.fs_grid_cell);
-  &:extend(.fs_grid_cell_right);
-}
-
-.fs_cell_centered() {
-  &:extend(.fs_grid_cell);
-  &:extend(.fs_grid_cell_centered);
-}
-
 // !Small, 540 (max 740)
 .fs_cell_xs(@count, @total:0) {
+
   @media screen and (@fs-grid-mq-max-sm) {
+
     & when (@total = 0) {
       .fs_grid_column(@fs-grid-columns-sm, @fs-grid-gutter, @count);
     }
+
     & when not (@total = 0) {
       .fs_grid_column(@total, @fs-grid-gutter, @count);
     }
@@ -160,10 +153,13 @@
 
 // Push
 .fs_push_xs(@count, @total:0) {
+
   @media screen and (@fs-grid-mq-max-sm) {
+
     & when (@total = 0) {
       .fs_grid_column_pushed(@fs-grid-columns-sm, @fs-grid-gutter, @count);
     }
+
     & when not (@total = 0) {
       .fs_grid_column_pushed(@total, @fs-grid-gutter, @count);
     }
@@ -172,10 +168,13 @@
 
 // !Min, 300 (max 500)
 .fs_cell_sm(@count, @total:0) {
-  @media screen and (~"@{fs-grid-mq-max-md}") {
+
+  @media screen and (@fs-grid-mq-max-md) {
+
     & when (@total = 0) {
       .fs_grid_column(@fs-grid-columns-sm, @fs-grid-gutter, @count);
     }
+
     & when not (@total = 0) {
       .fs_grid_column(@total, @fs-grid-gutter, @count);
     }
@@ -184,10 +183,13 @@
 
 // Push
 .fs_push_sm(@count, @total:0) {
-  @media screen and (~"@{fs-grid-mq-max-md}") {
+
+  @media screen and (@fs-grid-mq-max-md) {
+
     & when (@total = 0) {
       .fs_grid_column_pushed(@fs-grid-columns-sm, @fs-grid-gutter, @count);
     }
+
     & when not (@total = 0) {
       .fs_grid_column_pushed(@total, @fs-grid-gutter, @count);
     }
@@ -196,10 +198,13 @@
 
 // !Medium, 6 column, 720 (min 740)
 .fs_cell_md(@count, @total:0) {
+
   @media screen and (@fs-grid-mq-min-md) and (@fs-grid-mq-max-lg) {
+
     & when (@total = 0) {
       .fs_grid_column(@fs-grid-columns-md, @fs-grid-gutter, @count);
     }
+
     & when not (@total = 0) {
       .fs_grid_column(@total, @fs-grid-gutter, @count);
     }
@@ -208,10 +213,13 @@
 
 // Push
 .fs_push_md(@count, @total:0) {
+
   @media screen and (@fs-grid-mq-min-md) and (@fs-grid-mq-max-lg) {
+
     & when (@total = 0) {
       .fs_grid_column_pushed(@fs-grid-columns-md, @fs-grid-gutter, @count);
     }
+
     & when not (@total = 0) {
       .fs_grid_column_pushed(@total, @fs-grid-gutter, @count);
     }
@@ -220,10 +228,13 @@
 
 // !Large, 12 column, 960 (min 980)
 .fs_cell_lg(@count, @total:0) {
+
   @media screen and (@fs-grid-mq-min-lg) {
+
     & when (@total = 0) {
       .fs_grid_column(@fs-grid-columns-lg, @fs-grid-gutter, @count);
     }
+
     & when not (@total = 0) {
       .fs_grid_column(@total, @fs-grid-gutter, @count);
     }
@@ -232,10 +243,13 @@
 
 // Push
 .fs_push_lg(@count, @total:0) {
+
   @media screen and (@fs-grid-mq-min-lg) {
+
     & when (@total = 0) {
       .fs_grid_column_pushed(@fs-grid-columns-lg, @fs-grid-gutter, @count);
     }
+
     & when not (@total = 0) {
       .fs_grid_column_pushed(@total, @fs-grid-gutter, @count);
     }
@@ -244,10 +258,13 @@
 
 // !XLarge, 12 column, 1200 (min 1220)
 .fs_cell_xl(@count, @total:0) {
+
   @media screen and (@fs-grid-mq-min-xl) {
+
     & when (@total = 0) {
       .fs_grid_column(@fs-grid-columns-lg, @fs-grid-gutter, @count);
     }
+
     & when not (@total = 0) {
       .fs_grid_column(@total, @fs-grid-gutter, @count);
     }
@@ -256,10 +273,13 @@
 
 // Push
 .fs_push_xl(@count, @total:0) {
+
   @media screen and (@fs-grid-mq-min-xl) {
+
     & when (@total = 0) {
       .fs_grid_column_pushed(@fs-grid-columns-lg, @fs-grid-gutter, @count);
     }
+
     & when not (@total = 0) {
       .fs_grid_column_pushed(@total, @fs-grid-gutter, @count);
     }
